@@ -1,0 +1,11 @@
+.git/**
+dist/**
+node_modules/**
+.babelrc
+.eslintrc.json
+.gitignore
+.eslintrc.json
+package.json
+package-lock.json
+webpack.config.js
+webpack.dev.config.js

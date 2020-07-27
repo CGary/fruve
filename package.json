@@ -1,21 +1,50 @@
 {
-  "name": "platzi-recetas",
-  "version": "0.1.0",
-  "private": true,
+  "name": "frutasyverduras",
+  "version": "0.0.1",
+  "description": "Frutas y Verduras",
+  "main": "index.js",
   "dependencies": {
-    "isomorphic-fetch": "^2.2.1",
+    "@babel/polyfill": "^7.10.4",
+    "@babel/runtime": "^7.10.5",
+    "axios": "^0.19.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^5.2.1",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4",
-    "serve": "^9.6.0"
+    "react-icons": "^3.10.0",
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^5.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.4",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "prettier": "^2.0.5",
+    "webpack": "^4.44.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
-    "dev": "react-scripts start",
-    "start": "serve ./build -s -p 80",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "start": "webpack-dev-server --config webpack.dev.config.js",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CGary/fruve.git"
+  },
+  "keywords": [],
+  "author": "Cristian Gary Nuñez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CGary/fruve/issues"
+  },
+  "homepage": "https://github.com/CGary/fruve#readme"
 }
