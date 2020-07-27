@@ -11,6 +11,7 @@
     "react-dom": "^16.13.1",
     "react-icons": "^3.10.0",
     "react-router-dom": "^5.2.0",
+    "serve": "^11.3.2",
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
@@ -34,7 +35,8 @@
   },
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.config.js",
-    "build": "webpack"
+    "build": "webpack",
+    "prod": "webpack & serve ./dist -s -p 80"
   },
   "repository": {
     "type": "git",

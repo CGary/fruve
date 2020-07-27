@@ -7,4 +7,5 @@ node_modules/
 # testing
 
 # misc
+package-lock.json
 npm-debug.log*
