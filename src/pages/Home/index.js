@@ -3,15 +3,16 @@ import React from "react";
 const Home = () => {
   return (
     <Main>
-      <div>head</div>
-      <div>envio a domicilio</div>
-      <div>categorias</div>
+      <div>Cabecera</div>
+      <div>Envio a domicilio</div>
+      <div>Categorias</div>
       <Contenedor>
         {arrFrutas.map((f, i) => (
           <div key={"fruta-" + i}>
             <img src={f.url} />
             <div>{f.name}</div>
             <div>{f.precio}</div>
+            <div>Añadir al carrito</div>
           </div>
         ))}
       </Contenedor>
@@ -22,11 +23,14 @@ const Home = () => {
 export default Home;
 
 import styled from "styled-components";
-const Main = styled.div``;
+import { ContentBase } from "../../styles/commonStyles";
+const Main = styled(ContentBase)`
+  height: 100vh;
+`;
 const Contenedor = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 15px;
+  grid-gap: 10px;
   width: 100vw;
 
   img {
