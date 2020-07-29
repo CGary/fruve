@@ -9,3 +9,8 @@ export const ContentBase = styled.div`
     display: none;
   }
 `;
+
+export const Negro = styled.div`
+  font-size: 20px;
+  color: #333;
+`;

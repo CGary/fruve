@@ -1,18 +1,28 @@
 import React from "react";
+import { Head } from "../../components/Head";
+import { Negro } from "../../styles/commonStyles";
+import { GrDeliver } from "react-icons/gr";
+import { RiHandbagLine } from "react-icons/ri";
 
 const Home = () => {
   return (
     <Main>
-      <div>Cabecera {window.screen.width}</div>
-      <div>Envio a domicilio</div>
+      <Head />
+      <div>
+        <GrDeliver />
+        Envio a domicilio
+      </div>
       <div>Categorias</div>
       <Contenedor>
         {arrFrutas.map((f, i) => (
           <div key={"fruta-" + i}>
             <img src={f.url} />
-            <div>{f.name}</div>
+            <Negro>{f.name}</Negro>
             <div>{f.precio}</div>
-            <div>Añadir al carrito</div>
+            <Car>
+              <RiHandbagLine />
+              Añadir al Carrito
+            </Car>
           </div>
         ))}
       </Contenedor>
@@ -33,10 +43,12 @@ const Contenedor = styled.div`
   grid-gap: 7px;
   margin: 0 7px;
   width: calc(100vw - 14px);
+  background-color: #f2f2f2;
   img {
     width: 100%;
     height: calc((100vw / 1) - (7px * 2));
     object-fit: cover;
+    border-radius: 4%;
   }
   @media (min-width: 320px) {
     grid-template-columns: repeat(2, 1fr);
@@ -72,6 +84,18 @@ const Contenedor = styled.div`
   }
 `;
 
+const Car = styled.div`
+  cursor: pointer;
+  background-color: white;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  svg {
+    font-size: 16px;
+    margin-right: 4px;
+  }
+`;
 const arrFrutas = [
   {
     url:
