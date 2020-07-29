@@ -19,10 +19,12 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
+    host: "192.168.0.61",
     contentBase: path.resolve(__dirname, 'dist'),
     // open: true,
     port: 9001,
     hot: true
+    
   },
   module: {
     rules: [
