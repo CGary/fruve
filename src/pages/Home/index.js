@@ -1,29 +1,31 @@
 import React from "react";
 import { Head } from "../../components/Head";
-import { Negro } from "../../styles/commonStyles";
-import { GrDeliver } from "react-icons/gr";
+import { Delivery } from "../../components/Delivery";
+import { Categorias } from "../../components/Categorias";
 import { RiHandbagLine } from "react-icons/ri";
 
 const Home = () => {
   return (
     <Main>
       <Head />
-      <div>
-        <GrDeliver />
-        Envio a domicilio
-      </div>
-      <div>Categorias</div>
+      <Delivery />
+      <Categorias />
       <Contenedor>
+        <TitleDestacado className="negro home-destacado">
+          Productos Destacados
+        </TitleDestacado>
         {arrFrutas.map((f, i) => (
-          <div key={"fruta-" + i}>
+          <Fruta key={"fruta-" + i}>
             <img src={f.url} />
-            <Negro>{f.name}</Negro>
-            <div>{f.precio}</div>
-            <Car>
-              <RiHandbagLine />
-              Añadir al Carrito
-            </Car>
-          </div>
+            <Descripcion>
+              <TitleFruta className="negro">{f.name}</TitleFruta>
+              <div>{f.precio}</div>
+              <Car>
+                <RiHandbagLine />
+                Añadir al Carrito
+              </Car>
+            </Descripcion>
+          </Fruta>
         ))}
       </Contenedor>
     </Main>
@@ -34,26 +36,33 @@ export default Home;
 
 import styled from "styled-components";
 import { ContentBase } from "../../styles/commonStyles";
+
 const Main = styled(ContentBase)`
   height: 100vh;
 `;
+
 const Contenedor = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 7px;
-  margin: 0 7px;
+  padding: 0 7px;
   width: calc(100vw - 14px);
-  background-color: #f2f2f2;
+
   img {
     width: 100%;
     height: calc((100vw / 1) - (7px * 2));
     object-fit: cover;
-    border-radius: 4%;
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
+    border-radius: 7px;
   }
   @media (min-width: 320px) {
     grid-template-columns: repeat(2, 1fr);
     img {
-      height: calc((100vw - (7px * 3)) / 2);
+      height: calc((100vw - (7px * (1 + 2 + (2 * 2)))) / 2);
+    }
+    .home-destacado {
+      grid-column-end: span 2;
     }
   }
   @media (min-width: 420px) {
@@ -61,33 +70,68 @@ const Contenedor = styled.div`
   @media (min-width: 568px) {
     grid-template-columns: repeat(3, 1fr);
     img {
-      height: calc((100vw - (7px * 4)) / 3);
+      height: calc((100vw - (7px * (1 + 3 + (2 * 3)))) / 3);
+    }
+    .home-destacado {
+      grid-column-end: span 3;
     }
   }
   @media (min-width: 812px) {
     grid-template-columns: repeat(4, 1fr);
     img {
-      height: calc((100vw - (7px * 5)) / 4);
+      height: calc((100vw - (7px * (1 + 4 + (2 * 4)))) / 4);
+    }
+    .home-destacado {
+      grid-column-end: span 4;
     }
   }
   @media (min-width: 1024px) {
     grid-template-columns: repeat(5, 1fr);
     img {
-      height: calc((100vw - (7px * 6)) / 5);
+      height: calc((100vw - (7px * (1 + 5 + (2 * 5)))) / 5);
+    }
+    .home-destacado {
+      grid-column-end: span 5;
     }
   }
   @media (min-width: 1440px) {
     grid-template-columns: repeat(6, 1fr);
     img {
-      height: calc((100vw - (7px * 7)) / 6);
+      height: calc((100vw - (7px * (1 + 6 + (2 * 6)))) / 6);
+    }
+    .home-destacado {
+      grid-column-end: span 6;
     }
   }
 `;
 
-const Car = styled.div`
-  cursor: pointer;
+const TitleDestacado = styled.div`
+  grid-column-start: 1;
+  font-size: 20px;
+  height: 25px;
+  padding-top: 5px;
+`;
+
+const Fruta = styled.div`
   background-color: white;
   border-radius: 7px;
+  padding: 7px;
+`;
+
+const TitleFruta = styled.div`
+  font-size: 18px;
+`;
+
+const Descripcion = styled.div`
+  /* padding: 0 10px 10px 10px; */
+  display: grid;
+  align-items: center;
+`;
+
+const Car = styled.div`
+  cursor: pointer;
+  /* background-color: white;
+  border-radius: 7px; */
   display: flex;
   flex-direction: row;
   align-items: center;

@@ -16,10 +16,11 @@ import styled from "styled-components";
 
 const Main = styled.div`
   width: calc(100vw - 14px);
-  margin: 5px 7px;
+  padding: 5px 7px;
+  background-color: white;
   display: grid;
   grid-template-columns: 29px auto repeat(2, 29px);
-  grid-template-rows: 22px;
+  grid-template-rows: 29px;
   align-items: center;
   justify-items: start;
   .head-rigth {

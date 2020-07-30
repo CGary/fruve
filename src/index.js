@@ -9,8 +9,5 @@ const render = () => {
 
 render();
 
-// if (module.hot) {
-//   module.hot.accept("./components/App", () => {
-//     render();
-//   });
-// }
+// eslint-disable-next-line
+module.hot && module.hot.accept("./components/App", () => render());
