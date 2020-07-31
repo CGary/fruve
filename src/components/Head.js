@@ -5,7 +5,7 @@ export const Head = () => {
   return (
     <Main>
       <RiMenuLine />
-      <Logo>Logo</Logo>
+      <Logo>SOALNI Alimentos</Logo>
       <RiSearch2Line />
       <RiShoppingCartLine className="head-rigth" />
     </Main>
@@ -15,8 +15,8 @@ export const Head = () => {
 import styled from "styled-components";
 
 const Main = styled.div`
-  width: calc(100vw - 14px);
-  padding: 5px 7px;
+  width: calc(100vw - (2 * var(--vl-borde-ext)));
+  padding: 5px var(--vl-borde-ext);
   background-color: white;
   display: grid;
   grid-template-columns: 29px auto repeat(2, 29px);
@@ -28,4 +28,7 @@ const Main = styled.div`
   }
 `;
 
-const Logo = styled.div``;
+const Logo = styled.div`
+  font-size: var(--title1);
+  color: var(--cr-negro);
+`;

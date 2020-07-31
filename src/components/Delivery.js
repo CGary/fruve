@@ -4,8 +4,9 @@ import { GrDeliver } from "react-icons/gr";
 export const Delivery = () => {
   return (
     <Main>
-      <GrDeliver />
-      Envios a Domicilio y Normas de bioseguridad
+      <GrDeliver className="delivery-svg" />
+      <Title>Envíos a Domicilio</Title>
+      <Text>Cumpliendo con todas normas de bioseguridad</Text>
     </Main>
   );
 };
@@ -13,11 +14,25 @@ export const Delivery = () => {
 import styled from "styled-components";
 
 const Main = styled.div`
-  width: calc(100vw - 14px);
-  margin: 5px 7px;
+  font-size: var(--normal);
+  width: calc(100vw - (2 * var(--vl-borde-ext)));
+  margin: 5px var(--vl-borde-ext);
   display: grid;
-  grid-template-columns: 29px auto;
-  grid-template-rows: 29px;
+  grid-template-columns: 35px auto;
+  /* grid-template-rows: repeat(2, 29px); */
   align-items: center;
   justify-items: start;
+  .delivery-svg {
+    grid-row-start: 1;
+    grid-row-end: span 2;
+  }
+`;
+
+const Title = styled.div`
+  font-size: var(--title2);
+  color: var(--cr-negro);
+`;
+const Text = styled.div`
+  font-size: var(--chica);
+  letter-spacing: var(--vl-space-chica);
 `;
