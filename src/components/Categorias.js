@@ -4,7 +4,7 @@ export const Categorias = () => {
   return (
     <Main>
       <Container>
-        <Categ>Categorias</Categ>
+        <Categ>Categorías</Categ>
         <a href="#" className="categorias-row a-button">
           Frutas
         </a>

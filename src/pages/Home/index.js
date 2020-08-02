@@ -1,4 +1,5 @@
 import React from "react";
+import * as st from "./styles";
 import { Head } from "../../components/Head";
 import { Delivery } from "../../components/Delivery";
 import { Categorias } from "../../components/Categorias";
@@ -6,182 +7,36 @@ import { RiHandbagLine } from "react-icons/ri";
 
 const Home = () => {
   return (
-    <Main>
+    <st.Main>
       <Head />
       <Delivery />
       <Categorias />
-      <Contenedor>
-        <TitleDestacado className="negro home-destacado">
+      <st.Contenedor>
+        <st.TitleDestacado className="negro home-destacado">
           Productos Destacados
-        </TitleDestacado>
+        </st.TitleDestacado>
         {arrFrutas.map((f, i) => (
-          <Fruta key={"fruta-" + i}>
+          <st.Fruta key={"fruta-" + i}>
             <img src={f.url} />
-            <Descripcion>
-              <TitleFruta className="negro texto-1linea">{f.name}</TitleFruta>
-              <Precio className="texto-1linea">{f.precio}</Precio>
-              <Car href="#" className="a-button">
+            <st.Descripcion>
+              <st.TitleFruta className="negro texto-1linea">
+                {f.name}
+              </st.TitleFruta>
+              <st.Precio className="texto-1linea">{f.precio}</st.Precio>
+              <st.Car href="#" className="a-button">
                 <RiHandbagLine />
                 Al Carrito
-              </Car>
-            </Descripcion>
-          </Fruta>
+              </st.Car>
+            </st.Descripcion>
+          </st.Fruta>
         ))}
-      </Contenedor>
-    </Main>
+      </st.Contenedor>
+    </st.Main>
   );
 };
 
 export default Home;
 
-import styled from "styled-components";
-import { ContentBase } from "../../styles/commonStyles";
-
-const Main = styled(ContentBase)`
-  height: 100vh;
-`;
-
-const Contenedor = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: var(--vl-gap);
-  padding: 0 var(--vl-borde-ext);
-  width: calc(100vw - (2 * var(--vl-borde-ext)));
-
-  img {
-    width: 100%;
-    height: calc(
-      (
-          100vw -
-            (
-              (2 * var(--vl-borde-ext)) + ((2 * var(--vl-borde-caja)) * 2) +
-                (var(--vl-gap) * (2 - 1))
-            )
-        ) / 2
-    );
-    object-fit: cover;
-    border-radius: 7px;
-  }
-  .home-destacado {
-    grid-column-end: span 2;
-  }
-  @media (min-width: 320px) {
-    grid-template-columns: repeat(3, 1fr);
-    img {
-      height: calc(
-        (
-            100vw -
-              (
-                (2 * var(--vl-borde-ext)) + ((2 * var(--vl-borde-caja)) * 3) +
-                  (var(--vl-gap) * (3 - 1))
-              )
-          ) / 3
-      );
-    }
-    .home-destacado {
-      grid-column-end: span 3;
-    }
-  }
-  @media (min-width: 420px) {
-    grid-template-columns: repeat(4, 1fr);
-    img {
-      height: calc(
-        (
-            100vw -
-              (
-                (2 * var(--vl-borde-ext)) + ((2 * var(--vl-borde-caja)) * 4) +
-                  (var(--vl-gap) * (4 - 1))
-              )
-          ) / 4
-      );
-    }
-    .home-destacado {
-      grid-column-end: span 4;
-    }
-  }
-  @media (min-width: 568px) {
-    grid-template-columns: repeat(5, 1fr);
-    img {
-      height: calc(
-        (
-            100vw -
-              (
-                (2 * var(--vl-borde-ext)) + ((2 * var(--vl-borde-caja)) * 5) +
-                  (var(--vl-gap) * (5 - 1))
-              )
-          ) / 5
-      );
-    }
-    .home-destacado {
-      grid-column-end: span 5;
-    }
-  }
-  @media (min-width: 812px) {
-    grid-template-columns: repeat(6, 1fr);
-    img {
-      height: calc(
-        (
-            100vw -
-              (
-                (2 * var(--vl-borde-ext)) + ((2 * var(--vl-borde-caja)) * 6) +
-                  (var(--vl-gap) * (6 - 1))
-              )
-          ) / 6
-      );
-    }
-    .home-destacado {
-      grid-column-end: span 6;
-    }
-  }
-  @media (min-width: 1024px) {
-  }
-  @media (min-width: 1440px) {
-  }
-`;
-
-const TitleDestacado = styled.div`
-  grid-column-start: 1;
-  display: flex;
-  align-items: center;
-  font-size: var(--title1);
-  height: 25px;
-  padding-top: var(--vl-borde-caja);
-`;
-
-const Fruta = styled.div`
-  background-color: white;
-  border-radius: var(--vl-border-radius);
-  padding: var(--vl-borde-caja);
-`;
-
-const Descripcion = styled.div`
-  font-size: var(--normal);
-  display: grid;
-  /* grid-template-rows: 33px 14px 16px; */
-  align-items: center;
-`;
-
-const TitleFruta = styled.div`
-  align-self: start;
-  font-size: var(--title2);
-`;
-
-const Precio = styled.div`
-  align-self: center;
-  font-size: var(--normal);
-`;
-
-const Car = styled.a`
-  font-size: var(--chica);
-  letter-spacing: var(--vl-space-chica);
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  svg {
-    font-size: 16px;
-    margin-right: 4px;
-  }
-`;
 const arrFrutas = [
   {
     url:
@@ -204,7 +59,7 @@ const arrFrutas = [
   {
     url:
       "https://static2.abc.es/media/bienestar/2019/07/25/platano-beneficios-kIyF--620x349@abc.jpg",
-    name: "Plátano",
+    name: "Banana",
     precio: "1Bs / Unidad",
   },
   {
@@ -251,7 +106,7 @@ const arrFrutas = [
   {
     url:
       "https://static2.abc.es/media/bienestar/2019/07/25/platano-beneficios-kIyF--620x349@abc.jpg",
-    name: "Plátano",
+    name: "Banana",
     precio: "1Bs / Unidad",
   },
   {

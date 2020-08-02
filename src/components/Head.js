@@ -4,7 +4,9 @@ import { RiMenuLine, RiShoppingCartLine, RiSearch2Line } from "react-icons/ri";
 export const Head = () => {
   return (
     <Main>
-      <RiMenuLine />
+      <a href="#">
+        <RiMenuLine />
+      </a>
       <Logo>SOALNI Alimentos</Logo>
       <RiSearch2Line />
       <RiShoppingCartLine className="head-rigth" />
@@ -16,11 +18,11 @@ import styled from "styled-components";
 
 const Main = styled.div`
   width: calc(100vw - (2 * var(--vl-borde-ext)));
-  padding: 5px var(--vl-borde-ext);
+  padding: var(--vl-borde-caja) var(--vl-borde-ext);
   background-color: white;
   display: grid;
-  grid-template-columns: 29px auto repeat(2, 29px);
-  grid-template-rows: 29px;
+  grid-template-columns: 35px auto repeat(2, 29px);
+  /* grid-template-rows: 29px; */
   align-items: center;
   justify-items: start;
   .head-rigth {
